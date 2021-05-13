@@ -1,5 +1,6 @@
 using NUnit.Framework;
 using OpenQA.Selenium;
+using OpenQA.Selenium.Chrome;
 using TestProject3.PageObject;
 
 namespace TestProject3
@@ -13,7 +14,9 @@ namespace TestProject3
         public void Setup()
             
         {
-            driver = new OpenQA.Selenium.Chrome.ChromeDriver();
+            var chromeOptions = new ChromeOptions();
+            chromeOptions.AddArguments("Headless");
+            driver = new ChromeDriver(chromeOptions);
             driver.Navigate().GoToUrl("https://google.com");
 
         }
@@ -21,6 +24,7 @@ namespace TestProject3
         [Test]
         public void Test1()
         {
+            
             var pic = new SearchPage(driver);
             pic.clickPicture();
        
