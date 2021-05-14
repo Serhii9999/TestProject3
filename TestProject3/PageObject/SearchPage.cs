@@ -14,11 +14,11 @@ namespace TestProject3.PageObject
             this.driver = driver;
         }
 
-        private readonly By picture = By.XPath("//img[@id='hplogo']");
+        private readonly By forgotPassword = By.XPath("//div[@class='_6ltj']/a");
 
-        public  void clickPicture()
+        public  void clickForgotPassword()
         {
-            driver.FindElement(picture).Click();
+            driver.FindElement(forgotPassword).Click();
         }
     }
 }

@@ -17,7 +17,7 @@ namespace TestProject3
             var chromeOptions = new ChromeOptions();
             chromeOptions.AddArguments("Headless");
             driver = new ChromeDriver(chromeOptions);
-            driver.Navigate().GoToUrl("https://google.com");
+            driver.Navigate().GoToUrl("https://facebook.com");
 
         }
 
@@ -26,8 +26,9 @@ namespace TestProject3
         {
             
             var pic = new SearchPage(driver);
-            pic.clickPicture();
-       
+            pic.clickForgotPassword();
+            var expectedURL = "https://www.facebook.com/login/identify/?ctx=recover&ars=facebook_login&from_login_screen=0";
+            Assert.AreEqual(expectedURL, driver.Url);
         }
 
         public void tearDown()
